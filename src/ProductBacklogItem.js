@@ -1,9 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function ProductBacklogItem() {
+function ProductBacklogItem(props) {
     return (
-        <div>The product backlog item is what needed to improve the product which the details, such as a description, order, and size.</div>
+        <div>
+            <h1>{props.title}</h1>
+            <h2>Description</h2>
+            <p>{props.description}</p>
+            <h2>Order</h2>
+            <p>{props.order}</p>
+            <h2>Size</h2>
+            <p>{props.size}</p>
+        </div>
     );
 }
+
+ProductBacklogItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    size: PropTypes.number
+};
 
 export default ProductBacklogItem;

@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
+import './ProductBacklog.css'
 import ProductBacklogItem from './ProductBacklogItem';
+
 
 function ProductBacklog() {
 
-    const [productBacklogItems, setProductBacklogItems] = useState([1, 2, 3]);
+    const example = {
+        title: 'Lorem Ipsum',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        size: 1
+    };
+
+    const [productBacklogItems, setProductBacklogItems] = useState([{ ...example }, { ...example }]);
 
     return (
-        <div>
-            {productBacklogItems.map(productBacklogItem => <ProductBacklogItem></ProductBacklogItem>)}
+        <div className='ProductBacklog'>
+            {productBacklogItems.map((productBacklogItem, index) => (
+                <ProductBacklogItem
+                    key={index}
+                    title={productBacklogItem.title}
+                    description={productBacklogItem.description}
+                    size={productBacklogItem.size}>
+                </ProductBacklogItem>
+            ))}
         </div>
     );
 }
