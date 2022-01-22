@@ -18,6 +18,7 @@ function ProductBacklogItem(props) {
 ProductBacklogItem.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
+    order: PropTypes.number,
     size: PropTypes.number
 };
 
