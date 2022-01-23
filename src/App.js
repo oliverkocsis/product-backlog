@@ -1,7 +1,7 @@
-import ProductBacklog from './ProductBacklog';
+import ProductBacklogPage from './pages/ProductBacklogPage/ProductBacklogPage';
 
 function App() {
-  return <ProductBacklog></ProductBacklog>;
+  return <ProductBacklogPage></ProductBacklogPage>;
 }
 
 export default App;

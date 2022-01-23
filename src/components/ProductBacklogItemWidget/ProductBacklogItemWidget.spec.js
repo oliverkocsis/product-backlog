@@ -1,9 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import ProductBacklogItem from "./ProductBacklogItem";
+import ProductBacklogItemWdiget from "./ProductBacklogItemWidget";
 
 test('The `product backlog item` is what needed to improve the product with the details, such as `title`, `description`, `order`, and `size`.', () => {
-    const productBacklogItemModel = {
+    const mockProductBacklogItem = {
+        id: 0,
         title: 'Lorem Ipsum',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         order: 1,
@@ -11,12 +12,7 @@ test('The `product backlog item` is what needed to improve the product with the 
     };
 
     render(
-        <ProductBacklogItem
-            title={productBacklogItemModel.title}
-            description={productBacklogItemModel.description}
-            order={productBacklogItemModel.order}
-            size={productBacklogItemModel.size}
-        />);
+        <ProductBacklogItemWdiget productBacklogItem={mockProductBacklogItem} />);
     expect(screen.getByText('Lorem Ipsum')).toBeInTheDocument();
     expect(screen.getByText('Lorem ipsum dolor sit amet, consectetur adipiscing elit.')).toBeInTheDocument();
     expect(screen.getByText('1')).toBeInTheDocument();
